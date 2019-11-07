@@ -2,7 +2,7 @@
 
 
 Application pour gérer des événements.
-Version 3 : Utilisation de la gem Stripe pour gérer les paiements en ligne
+Version 4 : Utilisation de l'Asset Pipeline & Active Storage
 
 Pour lancer l'application en local :
 
