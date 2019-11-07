@@ -1,0 +1,96 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+<div class="contener text-center" style="margin: 10px">
+  <% if flash[:fail_password] %> 
+    <div class="alert alert-danger" role="alert">
+      Mauvais mot de passe
+    </div>
+  <% end %>
+</div>
+
+<div class="contener text-center" style="margin: 10px">
+  <% if flash[:fail] %> 
+    <div class="alert alert-danger" role="alert">
+      Une erreur s'est produite, veuillez réessayer!
+    </div>
+  <% end %>
+</div>
+
+<div class="container">
+	<h4 class="card-title mt-3 text-center">Créer un événement</h4>
+<hr>
+
+
+<%= form_tag "/users", method: "post" do %>
+
+	<div class="card bg-light">
+	<article class="card-body mx-auto" style="max-width: 400px;">
+
+		<form>
+		<div class="form-group input-group">
+			<div class="input-group-prepend">
+			    <span class="input-group-text"> <i class="fas fa-table"></i> </span>
+			 </div>
+	        <input name="start_date" class="form-control" placeholder="Date de l'événement" type="text">
+	    </div> 
+	    <div class="form-group input-group">
+			<div class="input-group-prepend">
+			    <span class="input-group-text"> <i class="fas fa-hourglass-start"></i> </span>
+			 </div>
+	        <input name="duration" class="form-control" placeholder="Durée" type="text">
+	    </div>
+
+	    <div class="form-group input-group">
+			<div class="input-group-prepend">
+			    <span class="input-group-text"> <i class="fas fa-heading"></i> </span>
+			 </div>
+	        <input name="title" class="form-control" placeholder="Titre" type="text">
+	    </div>
+	    <div class="form-group input-group">
+			<input name="description" class="form-control" placeholder="Décrivez l'événement" type="text">
+	    </div>
+
+	    <!-- form-group// -->
+	    <div class="form-group input-group">
+	    	<div class="input-group-prepend">
+			    <span class="input-group-text"> <i class="fas fa-money-bill-alt"></i> </span>
+			</div>
+			<input name="price" class="form-control" placeholder="Prix" type="number">
+	    </div>
+	    
+	    <!-- form-group// -->
+	    <div class="form-group input-group">
+	    	<div class="input-group-prepend">
+			    <span class="input-group-text"> <i class="fas fa-location-arrow"></i> </span>
+			</div>
+			<input name="location" class="form-control" placeholder="Lieu" type="text">
+	    </div>
+			<!--
+			<select name="city" class="form-control">
+				<option selected="Montpellier, Ouagadougou"> Sélectionner un lieu</option>
+			-->
+				
+			</select>
+		</div> <!-- form-group end.// -->
+	    
+	    <div class="form-group input-group">
+	    	
+	        
+	    </div> <!-- form-group// -->                                      
+	    <div class="form-group">
+	        <input type="submit" value="Créer l'événement" class="btn btn-primary btn-block"/>
+	    </div> <!-- form-group// -->      
+                                                                
+	</form>
+	</article>
+	</div> <!-- card.// -->
+	</div>
+	</div>
+<% end %>
+<!--container end.//-->

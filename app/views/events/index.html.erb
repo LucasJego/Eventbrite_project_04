@@ -1,0 +1,45 @@
+<div  class="jumbotron jumbotron-fluid" style="height:32em;">
+  <div class="container">
+    <!-- <h1 class="display-4" style="text-align:center; padding-top:80px; color:white;">Hello les MOUSS'</h1> -->
+    <h1 class="ml11" style="text-align:center; color:white; font-size:68px; padding-top:80px;">
+      <span class="text-wrapper">
+        <span class="line line1"></span>
+        <span class="letters">Bienvenue sur EventBrite !</span>
+      </span>
+    </h1>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <p style="text-align:center; font-size:28px; padding-top:40px; padding-bottom:40px; color:white;" class="lead"><strong>Tu pourras trouver ici tous les évènements qui auront lieu dans ta région.</strong></p>
+
+  </div>
+</div>
+
+
+
+<h1>Liste des événements</h1>
+
+<% @events_array.each_with_index do |event, i| %>
+<p>Evénement n°<%= i + 1 %> : <%= event.title %></p>
+<p>Date de l'événement : <%= event.start_date %></p>
+<p>Durée de l'événement : <%= event.duration %> min</p>
+<p>Prix : <%= event.price %></p>
+<p>Organisateur de l'événement : <%= event.administrator.first_name %> <%= event.administrator.last_name %></p>
+<p></p>
+<button type="button" class="btn btn-default"><a href="<%= event_path(event.id) %>">Voir l'événement</a></button>
+</br>
+<br/><br/>
+<% end %>
+
+
+
+
+<style>
+.jumbotron {
+   background-image: url("app/assets/images/slide_presta_event.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+    height:30em;
+  }
+</style>
